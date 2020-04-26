@@ -1,25 +1,34 @@
 \documentclass[letterpaper,twocolumn,openany,nodeprecatedcode]{dndbook}
 
-% Use babel or polyglossia to automatically redefine macros for terms
-% Armor Class, Level, etc...
-% Default output is in English; captions are located in lib/dndstrings.sty.
-% If no captions exist for a language, English will be used.
-%1. To load a language with babel:
-%	\usepackage[<lang>]{babel}
-%2. To load a language with polyglossia:
-%	\usepackage{polyglossia}
-%	\setdefaultlanguage{<lang>}
-\usepackage[english]{babel}
-%\usepackage[italian]{babel}
-% For further options (multilanguage documents, hypenations, language environments...)
-% please refer to babel/polyglossia's documentation.
+\usepackage{fontspec}
+\setmainfont{FreeSerif}
+\setsansfont{FreeSans}
+\setmonofont{FreeMono}
 
+\usepackage{xeCJK}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguages{english,japanese}
 \usepackage[utf8]{inputenc}
+
 \usepackage[singlelinecheck=false]{caption}
 \usepackage{lipsum}
 \usepackage{listings}
 \usepackage{shortvrb}
 \usepackage{stfloats}
+
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{uri}
+\usepackage{ulem}
+
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{titletoc}
+
+\newcommand*{\TODO}[1]{{\color{red}{TODO: \textit{#1}}}}
 
 \captionsetup[table]{labelformat=empty,font={sf,sc,bf,},skip=0pt}
 
@@ -31,329 +40,245 @@
   breaklines=true,
 }
 
-\title{The Dark \LaTeX{} \\
-\large An Example of the dndbook Class}
-\author{The rpgTeX Team}
-\date{2020/04/21}
+\title{Руководство Континиеда и Валелора по Страду}
+\author{Континиед и Валелор}
+\date{\today}
 
 \begin{document}
-
-\frontmatter
 
 \maketitle
 
 \tableofcontents
 
-\mainmatter%
+\large
 
-\part{Layout}
+\part{Рекап ака дневник Континиеда}
+\section{День первый. Лутаем начальную локацию}
 
-\chapter{Sections}
+Жизнь на континенте была довольно стабильной(нет), пока две империи не развязали войну
 
-\DndDropCapLine{T}{his package is designed to aid you in} writing beautifully typeset documents for the fifth edition of the world's greatest roleplaying game. It starts by adjusting the section formatting from the defaults in \LaTeX{} to something a bit more familiar to the reader. The chapter formatting is displayed above.
+Полгода назад стычки переросли в войну. Одна империя нейм объявила войну империи дроу(или наоборот, да какая нахуй разница)
 
-\section{Section}
-Sections break up chapters into large groups of associated text.
+Мы короче посидели за жизнь перетерли, закрыли глаза и слышим <<\textenglish{hey you finally awake}>>. И просыпаюсь в лесу
+(слава богу мод на альтернативные концовки поставил) с набором неписей, но чето больно активыне. Походу Тодд таки завез мультиплеер, заебись.
 
-\subsection{Subsection}
-Subsections further break down the information for the reader.
+И тут как бы понимаем что игра началась,
+встали, без лута как обычно. Залутали первый дом, как обычно. Как я понимаю сейчас цель левелапнуться и ваншотнуть дракона. Благо они должны быть нулевые.
 
-\subsubsection{Subsubsection}
-Subsubsections are the furthest division of text that still have a block header. Below this level, headers are displayed inline.
-
-\paragraph{Paragraph}
-The paragraph format is seldom used in the core books, but is available if you prefer it to the ``normal'' style.
-
-\subparagraph{Subparagraph}
-The subparagraph format with the paragraph indent is likely going to be more familiar to the reader.
-
-\section{Special Sections}
-The module also includes functions to aid in the proper typesetting of multi-line section headers: |\DndFeatHeader| for feats, |\DndItemHeader| magic items and traps, and |\DndSpellHeader| for spells.
-
-\DndFeatHeader{Typesetting Savant}[Prerequisite: \LaTeX{} distribution]
-You have acquired a package which aids in typesetting source material for one of your favorite games, giving you the following benefits:
+Мы представились друг другу, вот что я узнал:
 
 \begin{itemize}
-  \item You have advantage on Intelligence checks to typeset new content.
-  \item When you fail an Intelligence check to typeset new content, you can ask questions online at the package's website.
+    \item Наш танк, хорошо принимает урон и в целом танкует. Зовут Валелор. Как настоящий пацан качается в магию. 
+    Есть основания полагать что его мать ебал дракон: все разы, что открывал рот, сказал что был плохой LSR с ним, имеет драконью кожу.
+    \item Галахад -- мутный пацан, иногда уходит в темноту поделать свои темные делишки, наточить свою саблю и т.п. Но я всё слышу хе-хе.
+    Достает оружие из жопы и круто бьет.
+    \item Ящеролюд, по виду и поведению сразу видно, что судя по всему у него стоит мод на Таурена, но у меня не стоит, 
+    зато судя по темным делам Галахада у него нормально так стоит. Зовут Крокгар.
 \end{itemize}
 
-\DndItemHeader{Foo's Quill}{Wondrous item, rare}
-This quill has 3 charges. While holding it, you can use an action to expend 1 of its charges. The quill leaps from your hand and writes a contract applicable to your situation.
+\section{День второй}
 
-The quill regains 1d3 expended charges daily at dawn.
+Пошли в первый город, нашли по дороге псин. Я такой спрашиваю <<Вы че псины?>>. Ну и они не ответили короче, подумав что они псины, 
+по стрелял по ним с арбалета, на чем они и закончились. Был какой-то один бешенный пёс, я бы даже сказал волчара. 
+Но с нами дрался, а как следствие в цирке выступал. Так что максимум пёс.
 
-\DndSpellHeader%
-  {Beautiful Typesetting}
-  {4th-level illusion}
-  {1 action}
-  {5 feet}
-  {S, M (ink and parchment, which the spell consumes)}
-  {Until dispelled}
-You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
+Ну и мы пошли дальше. Нашли убитую \hyperref[sec:vilage]{деревню}, топ фактов которые мы нашли про неё:
+\begin{itemize}
+    \item Тут есть убитая таверна, врагу такую не пожелаю.
+    \item Тут есть торговец, является целью меин квеста компании. Подробнее почему он таким является будет ниже.
+\end{itemize}
 
-While the creature is charmed by you, they cannot take their eyes off the scroll and cannot willingly move away from the scroll. Also, the targets can make a wisdom saving throw at the end of each of their turns. On a success, they are no longer charmed.
+Развел бабулю на пирожок. Залутали \hyperref[sec:vilage:tavern]{таверну}, из лута нашли только драконорожденного. Как обычно, описываю топ фактов:
+\begin{enumerate}
+    \item Он драконорожденный.
+    \item У него есть ржавый меч.
+    \item Судя по всему у него <<хвостовая недостаточность>>. Хейтит хвосты, но по глазам видно что любит.
+    \item Зовут Медмаш и он не вампир. Что судя по всему ценно в этих краях.
+\end{enumerate}
 
-\section{Map Regions}
-The map region functions |\DndArea| and |\DndSubArea| provide automatic numbering of areas.
+\part{Рекап ака дневник Валелора}
 
-\DndArea{Village of Hommlet}
-This is the village of hommlet.
+\section{День первый}
 
-\DndSubArea{Inn of the Welcome Wench}
-Inside the village is the inn of the Welcome Wench.
+Осознаю себя в лесу. Рядом со мной сидят какие-то ребята, совершенно непонятного содержания. Сразу увидел похожего на дракона существо -- стало не по себе. Вспомнил те события. Они прошли уже давно, но сейчас это висит как меч над моей душой. 
 
-\DndSubArea{Blacksmith's Forge}
-There's a blacksmith in town, too.
+SUDDENLY мир перевернулся \TODO{Михаил, тут нужна ссылка на музыку в тему слов.}. Я потерял все снаряжение которое у меня было, но мы не унываем, ибо мне оно почти не нужно. Увидел вокруг себя норм пацанов и драгонборна. Короче представились друг другу и получилось примерно такое:
 
-\DndArea{Foo's Castle}
-This is foo's home, a hovel of mud and sticks.
+\begin{enumerate}
+    \item Галахад -- вроде человек, постоянно создает вокруг себя черное пространство, невозможно просто.
+    \item Континиед -- не могу понять, когда он врет, а когда нет. Уже несколько инцидентов было, короче непонятно ничего. Но вроде норм кент, надо поближе узнать
+    % Михаил спасибо за использование слова "LSR" вместо "инцидента"
+    \item Крокгар -- \textit{драконорожденный}.
+    \item Ящерка -- прикольный чел, постоянно по лесам ходит, тип стелсит, иногда просто шумит как сучка, но обычно норм. 
+\end{enumerate}
 
-\DndSubArea{Moat}
-This ditch has a board spanning it.
+\part{Места}
 
-\DndSubArea{Entrance}
-A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
+\section{Kumogakure no Sato}\label{sec:vilage}
 
-\chapter{Text Boxes}
+Деревня, снизу справа карты скрытая в тумане. Народ ходит грустным, около убитым. Местный \hyperref[sec:kolyan_indirovich]{староста} роскомнадзорнулся.
+Особо ничем не примечательна. Известен здесь как Баробас.
 
-The module has three environments for setting text apart so that it is drawn to the reader's attention. |DndReadAloud| is used for text that a game master would read aloud.
+\subsection{Убитая таверна}\label{sec:vilage:tavern}
+Это место хорошо характеризуется двумя словами.
+\begin{enumerate}
+    \item Убитая
+    \item Таверна
+\end{enumerate}
 
-\begin{DndReadAloud}
-  As you approach this module you get a sense that the blood and tears of many generations went into its making. A warm feeling welcomes you as you type your first words.
-\end{DndReadAloud}
+Подают тут только вино. Местного барда нет, так что звучит как хуйня.
 
-\section{As an Aside}
-The other two environments are the |DndComment| and the |DndSidebar|. The |DndComment| is breakable and can safely be used inline in the text.
+\subsection{Магазин}\label{sec:vilage:shop}
 
-\begin{DndComment}{This Is a Comment Box!}
-  A |DndComment| is a box for minimal highlighting of text. It lacks the ornamentation of |DndSidebar|, but it can handle being broken over a column.
-\end{DndComment}
+Продает всё в 10 раз дороже. Дом сделан из дерева. Дерево горит. Как и люди-торговцы. Совпадение? Не думаю.
 
-The |DndSidebar| is not breakable and is best used floated toward a page corner as it is below.
+\subsection{Церковь}
+Самая открытая церковь которую я видел. Как заходишь сразу слышно крики грешников, очень практично. 
+В целом немного ветхая и немного хуйня, там мы \hyperref[sec:kolyan_indirovich]{Коляна} и похоронили \#вечнаяпамять.
 
-\begin{DndSidebar}[float=!b]{Behold the DndSidebar!}
-  The |DndSidebar| is used as a sidebar. It does not break over columns and is best used with a figure environment to float it to one corner of the page where the surrounding text can then flow around it.
-\end{DndSidebar}
+\subsection{Дом старосты}\label{sec:vilage:homie}
+Норм домик, ток чето вещей на входе навалено, да и калитку я бы тут починил. Тут мы встретили \hyperref[sec:irina_kolyana]{Ириночку} и \hyperref[sec:ismark_kolyanovich]{Измарка} 
+который поначалу покался мне наемником, но видимо я обознался.
 
-\section{Tables}
-The |DndTable| colors the even rows and is set to the width of a line by default.
+\part{Персонажи}
 
-\begin{DndTable}[header=Nice Table]{XX}
-    \textbf{Table head}  & \textbf{Table head} \\
-    Some value  & Some value \\
-    Some value  & Some value \\
-    Some value  & Some value
-\end{DndTable}
+\section{\textit{Страд фон Зарович}}
 
-\chapter{Monsters and NPCs}
+Какой-то сраный поляк. Написал письмо, где поблагодарил какаого-то хера за избавление его от некоторой хуйни в доме. Может зайти в дом без приглашения \textenglish{knoсk-knock}.
 
-% Monster stat block
-\begin{DndMonster}[float*=b,width=\textwidth + 8pt]{Monster Foo}
-  \begin{multicols}{2}
-    \DndMonsterType{Medium aberration (metasyntactic variable), neutral evil}
+\section{МГТС фон Провайдерович}
 
-    % If you want to use commas in the key values, enclose the values in braces.
-    \DndMonsterBasics[
-        armor-class = {9 (12 with \emph{mage armor})},
-        hit-points  = {\DndDice{3d8 + 3}},
-        speed       = {30 ft., fly 30 ft.},
-      ]
+Справедливый. Правитель. Своих. Земель. Люди его уважают, женщины любят, а мужчины сосут. Топ кек правитель 12/10. Не может зайти без приглашения.
 
-    \DndMonsterAbilityScores[
-        str = 12,
-        dex = 8,
-        con = 13,
-        int = 10,
-        wis = 14,
-        cha = 15,
-      ]
+\section{Колян Индирович}\label{sec:kolyan_indirovich}
 
-    \DndMonsterDetails[
-        %saving-throws = {Str +0, Dex +0, Con +0, Int +0, Wis +0, Cha +0},
-        %skills = {Acrobatics +0, Animal Handling +0, Arcana +0, Athletics +0, Deception +0, History +0, Insight +0, Intimidation +0, Investigation +0, Medicine +0, Nature +0, Perception +0, Performance +0, Persuasion +0, Religion +0, Sleight of Hand +0, Stealth +0, Survival +0},
-        %damage-vulnerabilities = {cold},
-        %damage-resistances = {bludgeoning, piercing, and slashing from nonmagical attacks},
-        %damage-immunities = {poison},
-        %condition-immunities = {poisoned},
-        senses = {darkvision 60 ft., passive Perception 10},
-        languages = {Common, Goblin, Undercommon},
-        challenge = 1,
-      ]
-    % Traits
-    \DndMonsterAction{Innate Spellcasting}
-    Foo's spellcasting ability is Charisma (spell save DC 12, +4 to hit with spell attacks). It can innately cast the following spells, requiring no material components:
-    \begin{DndMonsterSpells}
-      \DndInnateSpellLevel{misty step}
-      \DndInnateSpellLevel[3]{fog cloud, rope trick}
-      \DndInnateSpellLevel[1]{identify}
-    \end{DndMonsterSpells}
+100 проц зовут Толян, но шифруется как сучка, 30 на десепшн. Рандомные факты:
 
-    \DndMonsterAction{Spellcasting}
-    Foo is a 2nd-level spellcaster. Its spellcasting ability is Charisma (spell save DC 12, +4 to hit with spell attacks). It has the following sorcerer spells prepared:
-    \begin{DndMonsterSpells}
-      \DndMonsterSpellLevel{blade ward, fire bolt, light, shocking grasp}
-      \DndMonsterSpellLevel[1][3]{burning hands, mage armor, shield}
-    \end{DndMonsterSpells}
+\begin{enumerate}
+    \item Был 水影{\it(мизу каге) ((ебучий анимешник))}, который как бы вроде 水{\it (мизу) ((ебучий))}, но собсна и 影{\it (каге) ((анимешник))}. Деревня называлась собсна очень просто -- \href{sec:vilage}{Kumogakure no Sat} {\it (Киригакурэ но Сато) ((очень блять ебучий нахуй анимешник, уровня Коли примерно))}.
+    \item Умер за три дня до прибытия от квантового оружия {Дениски}, но он не палится.
+    \item Был убит \hyperref[sec:kolyan_indirovich]{мелким пиздюком}
+    \item <<Когда мы услышали о его смерти, я услышал песню \href{https://www.youtube.com/watch?v=L_jWHffIx5E}{Somebody once told me} >> \textcopyright Коля
+\end{enumerate}
 
-    \DndMonsterSection{Actions}
-    \DndMonsterAction{Multiattack}
-    The foo makes two melee attacks.
 
-    %Default values are shown commented out
-    \DndMonsterAttack[
-      name=Dagger,
-      %distance=both, % valid options are in the set {both,melee,ranged},
-      %type=weapon, %valid options are in the set {weapon,spell}
-      mod=+3,
-      %reach=5,
-      %range=20/60,
-      %targets=one target,
-      dmg=\DndDice{1d4+1},
-      dmg-type=piercing,
-      %plus-dmg=,
-      %plus-dmg-type=,
-      %or-dmg=,
-      %or-dmg-when=,
-      %extra=,
-    ]
+\section{Ирина Коляна Индирович}\label{sec:irina_kolyana}
 
-    %\DndMonsterMelee calls \DndMonsterAttack with the melee option
-    \DndMonsterMelee[
-      name=Flame Tongue Longsword,
-      mod=+3,
-      %reach=5,
-      %targets=one target,
-      dmg=\DndDice{1d8+1},
-      dmg-type=slashing,
-      plus-dmg=\DndDice{2d6},
-      plus-dmg-type=fire,
-      or-dmg=\DndDice{1d10+1},
-      or-dmg-when=if used with two hands,
-      %extra=,
-    ]
+Тянка \sout{Михаила} Континиеда. Мне запрещено что-либо про нее писать \textcopyright Никита. 
 
-    %\DndMonsterRanged calls \DndMonsterAttack with the ranged option
-    \DndMonsterRanged[
-      name=Assassin's Light Crossbow,
-      mod=+1,
-      range=80/320,
-      dmg=\DndDice{1d8},
-      dmg-type=piercing,
-      %plus-dmg=,
-      %plus-dmg-type=,
-      %or-dmg=,
-      %or-dmg-when=,
-      extra={, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one}
-    ]
+Топ ЕОТ, единственная тян в нашей пати. Делает вид что не черная (могу даркнесс кастануть, будет черной, интересует?\textcopyright Антон), чтобы один расистский Людоящер её не убил нахер. Но мы всё видим. Олсо DM непись. Посмеялась с шутейки барда, поэтому буду ролять на соблазнение как бы. (А она disaster lesbian) Из полезного:
+У неё есть рапира, в случае чего спиздим.
+40 минут есть 40 минут.
+Вообще мы вроде взяли квест(на 50 голды ммм уровня <ФОТО МММЩИКА>)
+Прекрасно вписалась в наши ряды. Ирина и наш отряд, холст, масло, 745(1180)<пикча>
 
-    % Legendary Actions
-    \DndMonsterSection{Legendary Actions}
-    The foo can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The foo regains spent legendary actions at the start of its turn.
+\section{Измарк Колянович Индирович}\label{sec:ismark_kolyanovich}
 
-    \begin{DndMonsterLegendaryActions}
-      \DndMonsterLegendaryAction{Move}{The foo moves up to its speed.}
-      \DndMonsterLegendaryAction{Dagger Attack}{The foo makes a dagger attack.}
-      \DndMonsterLegendaryAction{Create Contract (Costs 3 Actions)}{The foo presents a contract in a language it knows and waves it in the face of a creature within 10 feet. The creature must make a DC 10 Intelligence saving throw. On a failure, the creature is incapacitated until the start of the foo's next turn. A creature who cannot read the language in which the contract is written has advantage on this saving throw.}
-    \end{DndMonsterLegendaryActions}
-  \end{multicols}
-\end{DndMonster}
+Текущий 水影, дал нам щедрый квест на 50 золотых монет. Помогли ему похоронить батю. Есть \hyperref[sec:vilage:homie]{поношенная хата}.
 
-The |DndMonster| environment is used to typeset monster and NPC stat blocks. The module supplies many functions to easily typeset the contents of the stat block
+\section{Бильдарт Кондермит}
 
-\part{Customization}
+Мразь, народ уважает хуже чем Страда. Поговаривают что именно он это проклятие которая заслужила эта деревня. Заслуженное первое место в списке пидорасов, в целом нулевое тоже заслуженно, но на нулевом его мать, потому что рождение таких не прощают.
+Сборник интересных историй про него:
+\begin{enumerate}
+    \item Когда в катку зашел друид-варвар-паладин, который хотел смайтовать зубами в форме медведя в ярости и увидел его, он сказал что у вас в катке уже есть самый гейский гей, а второе место я занимать не хочу, и вышел.
+    
+    \item 
+        Идут по лесу Белоснежка, Дюймовочка и Хуесос. 
+            Белоснежка говорит: 
+                я самая красивая. 
+            Дюймовочка говорит: 
+                я самая маленькая. 
+            Хуесос говорит: 
+                я отсосал больше всех хуёв. 
+        Тут они заходят в дом правды. 
+            Выбегает оттуда в слезах Белоснежка: 
+                я не самая красивая,
+                    самая красивая Спящая красавица! 
+            Выходит расстроенная Дюймовочка:
+                я не самая Маленькая, 
+                    Мальчик-c-Пальчик меньше меня.
+            Выходит разъяренный Хуесос и как заорёт: 
+                КТО БЛЯТЬ ТАКОЙ Бильдарт Кондермит?
+    
+    \item > Я посмотрел 14000605 вариантов будущего
+    > В скольки ты \sout{выживаешь} сделал скидку?
+    > Ни в одном
+\end{enumerate}
 
-\chapter{Colors}
+\section{Лукъян Петрович(Харитонович)}\label{sec:pop}
+Поп или пуш этой деревни.
 
-\begin{table*}[b]
-  \caption{\DndFontTableTitle{}Colors Supported by this Package}\label{tab:colors}
+\section{Ешка}\label{sec:yeshka}
+Парень которого ебет \hyperref[sec:pop]{местный поп} в местной церкви. Был бы поаккуратнее в этой церкви, знаю я этих католиков. Умеет открывать тайник с костями.
 
-  \begin{tabularx}{\linewidth}{lX}
-    \textbf{Color}                  & \textbf{Description} \\
-    \rowcolor{PhbLightGreen}
-    |PhbLightGreen|                 & Light green used in PHB Part 1 (Default) \\
-    \rowcolor{PhbLightCyan}
-    |PhbLightCyan|                  & Light cyan used in PHB Part 2 \\
-    \rowcolor{PhbMauve}
-    |PhbMauve|                      & Pale purple used in PHB Part 3 \\
-    \rowcolor{PhbTan}
-    |PhbTan|                        & Light brown used in PHB appendix \\
-    \rowcolor{DmgLavender}
-    |DmgLavender|                   & Pale purple used in DMG Part 1 \\
-    \rowcolor{DmgCoral}
-    |DmgCoral|                      & Orange-pink used in DMG Part 2 \\
-    \rowcolor{DmgSlateGray}
-    |DmgSlateGray| (|DmgSlateGrey|) & Blue-gray used in PHB Part 3 \\
-    \rowcolor{DmgLilac}
-    |DmgLilac|                      & Purple-gray used in DMG appendix \\
-    \rowcolor{BrGreen}
-    |BrGreen|                       & Gray-green used for tables in Basic Rules\\
-  \end{tabularx}
-\end{table*}
+\section{Урвин}\label{sec:urvin}
+Глава Таверны, по совместительству -- муж барменши. Уебок на 3 / 10. Не хочет покупать вино напрямую у нас. 
 
-This package provides several global color variables to style |DndComment|, |DndReadAloud|, |DndSidebar|, and |DndTable| environments.
+\section{Давиан Мартиков}\label{sec:davian_martyakov}
+Чувак из квеста про \hyperref[sec:wine_problems]{проблемы с вином}. Живет в виноварне. 
 
-\begin{DndTable}[header=Box Colors]{lX}
-  \textbf{Color}   & \textbf{Description} \\
-  |commentcolor|   & |DndComment| background \\
-  |readaloudcolor| & |DndReadAloud| background \\
-  |sidebarcolor|   & |DndSidebar| background \\
-  |tablecolor|     & background of even |DndTable| rows \\
-\end{DndTable}
+\section{Блуто}
+Звучит как плуто. Наорал на попа, стандартный пёс вида кококо ты не сберег мою жену кокококо этот бог юзлесс.
 
-They also accept an optional color argument to set the color for a single instance. See Table~\ref{tab:colors} for a list of core book accent colors.
+\section{Миловой}
+Местный садовник. Урвин рассказал ему о костях чтобы сука утешить. Работает в детдоме, в приюте Святого Андерсена.
 
-\begin{lstlisting}
-\begin{DndTable}[color=PhbLightCyan]{cX}
-  \textbf{d8} & \textbf{Item} \\
-  1 & Small wooden button \\
-  2 & Red feather \\
-  3 & Human tooth \\
-  4 & Vial of green liquid \\
-  6 & Tasty biscuit \\
-  7 & Broken axe handle \\
-  8 & Tarnished silver locket \\
-\end{DndTable}
-\end{lstlisting}
+\section{Седрик}
+Упал с лестницы, сломал себе шею. Кажется не несчастный случай.
 
-\begin{DndTable}[color=PhbLightCyan]{cX}
-  \textbf{d8} & \textbf{Item} \\
-  1 & Small wooden button \\
-  2 & Red feather \\
-  3 & Human tooth \\
-  4 & Vial of green liquid \\
-  6 & Tasty biscuit \\
-  7 & Broken axe handle \\
-  8 & Tarnished silver locket \\
-\end{DndTable}
+\section{Блинский}
+Игродел
 
-\section{Themed Colors}
-Use |\DndSetThemeColor[<color>]| to set |commentcolor|, |readaloudcolor|, |sidebarcolor|, and |tablecolor| to a specific color. Calling |\DndSetThemeColor| without an argument sets those colors to the current |themecolor|. In the following example the group limits the change to just a few boxes; after the group finishes, the colors are reverted to what they were before the group started.
+\section{Клаудиа}
+Ведьма приюта.
 
-\begin{lstlisting}
-\begingroup
-\DndSetThemeColor[PhbMauve]
+\section{Хэндрик ван дер Вурд}
+Гробовщик 
+Чел которому продали кости
 
-\begin{DndComment}{This Comment Is in Mauve}
-  This comment is in the the new color.
-\end{DndComment}
+\section{Валлакович Варгас}
+Мер этого города. Какой-то пёс. Хочет чтобы всем было весело.
 
-\begin{DndSidebar}{This Sidebar Is Also Mauve}
-  The sidebar is also using the new theme color.
-\end{DndSidebar}
-\endgroup
-\end{lstlisting}
+\section{Валлакович Жена}
 
-\begingroup
-\DndSetThemeColor[PhbMauve]
+\section{Валлакович Пёс 1}
 
-\begin{DndComment}{This Comment Is in Mauve}
-  This comment is in the the new color.
-\end{DndComment}
+\section{Валлакович Пёс 2}
 
-\begin{DndSidebar}{This Sidebar Is Also Mauve}
-  The sidebar is also using the new theme color.
-\end{DndSidebar}
-\endgroup
+\section{Изек Стразни}
+
+Демоническая херня, пошла к двум стражам.
+
+\section{Леди Вахтер(Фиона)}
+
+Какая-то женщина, у которой нужно найти <<нужную>> улику. 
+
+
+% Род: Кресковы. Дмитрий Кресков -- главный в роду
+% Граф тоже знатный
+
+
+
+\section{Страж 1}
+
+Псина, зашла к нам с пиками и потребовала пройти с ними.
+
+\section{Страж 2}
+
+Норм чел, уважительно попросил пройти с ним.
+
+\section{Штифан Корушкин}
+Аутист с нулем интеллекта. Прозвище -- <<Кукушкин>>. Блестящий кандидат на пару ночей в колодках, AA прошел.
+
+\part{Сайд квесты}
+
+\section{Проблемы с вином}\label{sec:wine_problems}
+
+Замешаны \hyperref[sec:davian_martyakov]{Давиан} и \hyperref[sec:urvin]{Урвин}. Уже больше месяца никаких поставок вина нет.
+
+\begin{english}
+\LARGE to be continued $\Rightarrow$
+\end{english}
 
 \end{document}
